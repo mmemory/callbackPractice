@@ -142,7 +142,15 @@ uniq(names, function(uniqArr){
 
     //Code Here for each
 
+var each = function (arr, cb) {
+    var index, item;
 
+    for (var i = 0; i < arr.length; i++) {
+        index = i;
+        item = arr[i];
+        cb(item, index);
+    }
+};
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 each(names, function(item, indice){
@@ -160,6 +168,16 @@ each(names, function(item, indice){
 
 
  //code here for getUserById
+
+var getUserById = function (arr, userId, cb) {
+    for (var i = 0; i < arr.length; i++) {
+        for (key in arr[i]) {
+            if (arr[i][key] === userId) {
+                return cb(arr[i]);
+            }
+        }
+    }
+};
 
 var users = [
   {
@@ -179,7 +197,7 @@ var users = [
     email: 'ryan@gmail.com',
     name: 'Ryan',
     address: '192 East 32 North'
-  },
+  }
 ];
 
 getUserById(users, '16t', function(user){
