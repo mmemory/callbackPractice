@@ -43,10 +43,14 @@ first(names, function(firstName){
 
 
   //Code Here for last
+var last = function (arr, logName) {
+    return logName(arr[arr.length - 1]);
+};
+
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 last(names, function(lastName){
-  console.log('The last name in names is ', lastName);
+  console.log('The last name in names is', lastName);
 });
 
 
