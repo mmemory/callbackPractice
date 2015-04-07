@@ -66,9 +66,13 @@ last(names, function(lastName){
 
   //Code Here for multiply
 
+var multiply = function (num1, num2, log) {
+    return log(num1 * num2);
+};
+
 multiply(4, 3, function(answer){
-  console.log('The answer is ', answer); //should console.log 12
-})
+  console.log('The answer is', answer); //should console.log 12
+});
 
 
 
