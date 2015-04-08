@@ -107,7 +107,6 @@ contains(names, 'Colt', function(result){
 
 
 
-
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
@@ -115,15 +114,30 @@ contains(names, 'Colt', function(result){
 
     //Code Here for uniq
 
-var uniq = function (arr, cb) {
-    var newArray = [];
+//var uniq = function (arr, cb) {
+//    var newArray = [];
+//
+//    for (var i = 0; i < arr.length; i++) {
+//        if (newArray.indexOf(arr[i]) === -1) {
+//            newArray.push(arr[i]);
+//        }
+//    }
+//    return cb(newArray);
+//};
 
+
+// More efficient way
+var uniq = function (arr, cb) {
+    var tracker = {};
     for (var i = 0; i < arr.length; i++) {
-        if (newArray.indexOf(arr[i]) === -1) {
-            newArray.push(arr[i]);
+        if (!tracker[arr[i]]) {
+            tracker[arr[i]] = true;
+        } else {
+            arr.splice(i, 1);
+            i--;
         }
     }
-    return cb(newArray);
+    return cb(arr)
 };
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -169,13 +183,19 @@ each(names, function(item, indice){
 
  //code here for getUserById
 
-var getUserById = function (arr, userId, cb) {
+//var getUserById = function (arr, userId, cb) {
+//    for (var i = 0; i < arr.length; i++) {
+//        for (key in arr[i]) {
+//            if (arr[i][key] === userId) {
+//                return cb(arr[i]);
+//            }
+//        }
+//    }
+//};
+
+var getUsersById = function (arr, id, cb) {
     for (var i = 0; i < arr.length; i++) {
-        for (key in arr[i]) {
-            if (arr[i][key] === userId) {
-                return cb(arr[i]);
-            }
-        }
+
     }
 };
 
